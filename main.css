@@ -2,3 +2,6 @@ body {
 font-family: verdana, helvetica, arial, sans-serif;
 font-size: 1em;
 }
+.fieldset-width1 {
+    width: 200px;
+}
