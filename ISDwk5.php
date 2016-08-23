@@ -61,7 +61,62 @@
             echo $row['FirstName'].' '.$row['LastName'].' '.$row['Email'].'<br />';
          }
          ?>
-
+         <?php
+         //Display heading
+         echo '<h2>Select ALL from the Customer Table with Age > 22</h2>';
+         //run query to select all records from customer table
+         $query="SELECT * FROM Customer WHERE Age >22";
+         $result=mysqli_query($connection, $query);
+         //store the result of the query in a variable called $result
+         
+         //Use a while loop to iterate through your $result array and display
+         //the first name, last name and email for each record
+         while ($row=mysqli_fetch_assoc($result)){
+            echo $row['FirstName'].' '.$row['LastName'].' '.$row['Email'].' '.$row['Age'].'<br />';
+         }
+         ?>
+         <?php
+         //Display heading
+         echo '<h2>Select Females from the Customer Table with Age >= 22</h2>';
+         //run query to select all records from customer table
+         $query="SELECT * FROM Customer WHERE Gender='F' AND Age>=22";
+         $result=mysqli_query($connection, $query);
+         //store the result of the query in a variable called $result
+         
+         //Use a while loop to iterate through your $result array and display
+         //the first name, last name and email for each record
+         while ($row=mysqli_fetch_assoc($result)){
+            echo $row['FirstName'].' '.$row['LastName'].' '.$row['Email'].' '.$row['Age'].'<br />';
+         }
+         ?>
+         <?php
+         //Display heading
+         echo '<h2>Select Males from the Customer Table list by age descending</h2>';
+         //run query to select all records from customer table
+         $query="SELECT * FROM Customer WHERE Gender='M' ORDER BY Age DESC";
+         $result=mysqli_query($connection, $query);
+         //store the result of the query in a variable called $result
+         
+         //Use a while loop to iterate through your $result array and display
+         //the first name, last name and email for each record
+         while ($row=mysqli_fetch_assoc($result)){
+            echo $row['FirstName'].' '.$row['LastName'].' '.$row['Email'].' '.$row['Age'].'<br />';
+         }
+         ?>
+         <?php
+         //Display heading
+         echo '<h2>Select all with "a" in first name</h2>';
+         //run query to select all records from customer table
+         $query="SELECT * FROM Customer WHERE FirstName Like '%a%' ORDER BY Age DESC Limit 3";
+         $result=mysqli_query($connection, $query);
+         //store the result of the query in a variable called $result
+         
+         //Use a while loop to iterate through your $result array and display
+         //the first name, last name and email for each record
+         while ($row=mysqli_fetch_assoc($result)){
+            echo $row['FirstName'].' '.$row['LastName'].' '.$row['Email'].' '.$row['Age'].'<br />';
+         }
+         ?>
       </section>
       <footer>   
          <small><a href="ISDwk1.html">Home</a></small>
