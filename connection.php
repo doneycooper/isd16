@@ -1,3 +1,3 @@
 <?php
-$connection=mysqli_connect('localhost','doneycooper','','c123456');
+$connection=mysqli_connect('localhost','root','','c123456');
 ?>
